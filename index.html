@@ -15,8 +15,9 @@
     <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
     <nav id="mainNav" aria-label="Main navigation">
       <a href="#system">System</a><a href="#hardware">Hardware</a><a href="#data">Data</a><a href="#analysis">Lap analysis</a><a href="#evidence">Credibility</a>
+      <a class="nav-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=edubilliadityanaidu45@gmail.com&su=Inquiry%20regarding%20ApexAI%20Telemetry" target="_blank" rel="noopener noreferrer">Contact Us <span>↗</span></a>
     </nav>
-    <a class="header-cta" href="#start">START HERE <span>↗</span></a>
+    <a class="header-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=edubilliadityanaidu45@gmail.com&su=Inquiry%20regarding%20ApexAI%20Telemetry" target="_blank" rel="noopener noreferrer">CONTACT US <span>↗</span></a>
   </header>
 
   <main>
@@ -85,15 +86,6 @@
       </tbody></table></div>
       <div class="context-cards"><article><span class="context-icon">01</span><h3>Kart & vehicle</h3><p>Kart ID, gearing if applicable, tyre type and condition, pressure if measured, mass/fuel state if relevant, setup changes, and maintenance notes.</p></article><article><span class="context-icon">02</span><h3>Track & surface</h3><p>Track layout and direction, start/finish line, corner labels, wet/dry surface, track temperature if available, and whether any layout changed.</p></article><article><span class="context-icon">03</span><h3>Driver & session</h3><p>Driver ID, session date, warm-up status, traffic or interrupted laps, and any safety or data-quality notes. Compare like with like wherever possible.</p></article></div>
       <p class="small-note">Do not claim to measure throttle, brake pressure, steering angle, tyre temperature or suspension travel unless a suitable sensor actually measures it. Phone GPS alone cannot provide those signals.</p>
-      <div class="csv-kit" id="csvKit">
-        <div class="csv-kit-copy"><div class="eyebrow">DOWNLOADABLE DATA KIT</div><h3>Start with a file you can inspect.</h3><p>Use the template for your phone logger. The demo file is synthetic and exists only to test the workflow. The OpenF1 link returns real Formula 1 car telemetry—not go-kart data—so keep it as a separate learning reference.</p></div>
-        <div class="csv-downloads">
-          <a class="csv-download" href="data/kart_gps_template.csv" download><span class="csv-icon">CSV</span><span><strong>Phone GPS template</strong><small>Correct column names · empty template</small></span><b>↓</b></a>
-          <a class="csv-download" href="data/synthetic_kart_demo.csv" download><span class="csv-icon">CSV</span><span><strong>Small demo session</strong><small>Synthetic values · labelled clearly</small></span><b>↓</b></a>
-          <a class="csv-download" href="https://api.openf1.org/v1/car_data?session_key=9159&amp;driver_number=55&amp;csv=true" target="_blank" rel="noopener"><span class="csv-icon csv-icon-real">LIVE</span><span><strong>Real F1 telemetry CSV</strong><small>OpenF1 · public historical reference</small></span><b>↗</b></a>
-        </div>
-        <p class="csv-disclaimer"><strong>Data integrity:</strong> No real kart session was supplied for this website. Do not present the synthetic demo as collected data or F1 telemetry as kart telemetry. Replace both with your own logged CSV when available.</p>
-      </div>
     </section>
 
     <section class="section-wrap section-pad analysis-section" id="analysis">
@@ -116,7 +108,7 @@
           <article class="evidence-card"><span class="evidence-kicker">03 / MODEL VALIDATION</span><h3>Prove the model adds value.</h3><p>Start with a median-time baseline, then compare Linear Regression and Random Forest. Hold out whole sessions and report Mean Absolute Error (MAE) in seconds.</p><ul><li>Test on unseen sessions</li><li>Compare against a baseline</li><li>No claimed accuracy before testing</li></ul></article>
         </div>
         <div class="model-strip"><div><span class="model-strip-label">FIRST ML QUESTION</span><h3>How long will this segment take?</h3><p>Features: segment ID, entry speed, previous segment exit speed and known session context. Target: measured segment time. Use only information available at the prediction moment; never feed future corner outcomes into a before-corner prediction.</p></div><div class="model-strip-flow"><span>Real lap segments</span><b>→</b><span>Baseline</span><b>→</b><span>Regression / Random Forest</span><b>→</b><span>MAE on held-out sessions</span></div></div>
-        <div class="credibility-note"><span>!</span><p><strong>Current status:</strong> this is an educational website with an illustrative chart and an example CSV. It is not yet a validated kart telemetry product. Results become project evidence only after tests using actual recorded sessions.</p></div>
+        <div class="credibility-note"><span>!</span><p><strong>Current status:</strong> this is an educational website with illustrative charts. It is not yet a validated kart telemetry product. Results become project evidence only after tests using actual recorded sessions.</p></div>
       </div>
     </section>
 
@@ -125,14 +117,55 @@
       <div class="usefulness-grid"><article><span class="use-number">01</span><h3>Find where time changes</h3><p>Instead of seeing only a final lap time, see where the gap to a reference lap begins to grow or shrink.</p></article><article><span class="use-number">02</span><h3>Make comparisons repeatable</h3><p>Use the same track positions and segment boundaries each time, and keep session conditions with the data.</p></article><article><span class="use-number">03</span><h3>Help drivers review</h3><p>Share graphs and specific sections with the driver after the session, then verify observations during a debrief.</p></article><article><span class="use-number">04</span><h3>Support engineering work</h3><p>Build a record of sessions and compare the effect of known setup or condition changes without assuming causation.</p></article><article><span class="use-number">05</span><h3>Demonstrate data science</h3><p>Show a full applied workflow: sensors, data engineering, algorithms, model evaluation, and communication of results.</p></article><article><span class="use-number">06</span><h3>Scale up later</h3><p>Add a better GNSS receiver or IMU after identifying which data gaps actually limit the analysis.</p></article></div>
     </section>
 
-
-
-    <section class="section-wrap section-pad start-section" id="start">
-      <div class="start-card"><div><div class="eyebrow">YOUR FIRST ACTION</div><h2>Start with one real CSV.</h2><p>Before buying extra hardware or training a model, collect a short session, inspect its data quality, and test whether you can identify valid laps. That tells us what the current setup can—and cannot—measure.</p><a class="button button-primary" href="#csvKit">Get the CSV data kit <span>↗</span></a></div><div class="start-checklist"><h3>First-session checklist</h3><p><span>✓</span> Phone mounted securely</p><p><span>✓</span> Logger exports CSV</p><p><span>✓</span> Timestamps and coordinates checked</p><p><span>✓</span> Track and lap crossing verified</p><p><span>✓</span> Results labelled as real or illustrative</p></div></div>
+    <section class="section-wrap section-pad contact-section" id="contact">
+      <div class="contact-card">
+        <div>
+          <div class="eyebrow">GET IN TOUCH</div>
+          <h2>Ready to talk telemetry or collaborate?</h2>
+          <p>Whether you have questions about track data, feedback on the project, or want to discuss go-kart sensor integration, reach out directly via email or phone.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=edubilliadityanaidu45@gmail.com&su=Inquiry%20regarding%20ApexAI%20Telemetry" target="_blank" rel="noopener noreferrer">Email Us <span>↗</span></a>
+            <a class="button button-outline" href="tel:+919492213985">Call: +91 94922 13985 <span>☎</span></a>
+          </div>
+        </div>
+        <div class="contact-info-box">
+          <h3>Direct Contact Details</h3>
+          <div class="contact-item">
+            <span class="contact-icon">✉</span>
+            <div>
+              <strong>Email Address</strong>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=edubilliadityanaidu45@gmail.com&su=Inquiry%20regarding%20ApexAI%20Telemetry" target="_blank" rel="noopener noreferrer">edubilliadityanaidu45@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">☏</span>
+            <div>
+              <strong>Phone Number</strong>
+              <a href="tel:+919492213985">+91 94922 13985</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">⏱</span>
+            <div>
+              <strong>Availability</strong>
+              <span>Open for technical discussion &amp; inquiries</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-
   </main>
-  <footer class="site-footer"><div class="section-wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark">A</span><span class="brand-word">Apex<span class="brand-accent">AI</span><small>GO-KART TELEMETRY</small></span></a><p>Educational project concept · Synthetic data is labelled · Validate with real kart sessions.</p><a href="#home">Back to top ↑</a></div></footer>
+  <footer class="site-footer">
+    <div class="section-wrap footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark">A</span><span class="brand-word">Apex<span class="brand-accent">AI</span><small>GO-KART TELEMETRY</small></span></a>
+      <div class="footer-contact">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=edubilliadityanaidu45@gmail.com&su=Inquiry%20regarding%20ApexAI%20Telemetry" target="_blank" rel="noopener noreferrer">edubilliadityanaidu45@gmail.com</a>
+        <span class="footer-dot">·</span>
+        <a href="tel:+919492213985">+91 94922 13985</a>
+      </div>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
